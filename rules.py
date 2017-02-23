@@ -19,7 +19,7 @@ class HeadingRule(Rule):
     def condition(self, block):
         return not '\n' in block and len(block)<=70 and not block[-1]== ':'
 
-class TitleRule(Rule):
+class TitleRule(HeadingRule):
     """
     题目是文档的第一个块，但前提是它是大标题
     """
