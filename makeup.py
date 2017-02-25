@@ -23,8 +23,8 @@ class Parser:
             for filter in self.filters:
                 block = filter(block, self.handler)
             for rule in self.rules:
-                if rule.condition(block):
-                    last = rule.action(block, self.handler)
+                if rule.condition(block):           #判断字符串属于哪一类规则
+                    last = rule.action(block, self.handler) 　#运行规则处理字符串
                     if last:break
         self.handler.end('document')
 
