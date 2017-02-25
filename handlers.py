@@ -4,9 +4,16 @@ class Handler:
     """
     # 定义回调函数，调用该类中的函数名为prefix + name　的方法，输入参数为*args
     def callback(self, prefix, name, *args):
+        """
+        callback方法负责在给定前缀和一个名字后找到正确的方法，并且使用none为默认值的getattr方法
+        如果从getattr返回的对象能被调用，那么对象就可以用提供的任意额外的参数调用。
+        """
         method = getattr(self, prefix+name, None)
         if callable(method): return method(*args)
     def start(self, name):
+        """
+        start和end方法只是使用各自的前缀的start_和end_方法的助手方法
+        """
         self.callback('start_', name)
     def end(self, name):
         self.callback('end_', name)
