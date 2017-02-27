@@ -21,4 +21,5 @@
    处理程序: handler.py
    规则：rules.py
    主程序: makeup.py
-   
+   
+３、基本了解了其主要框架
