@@ -10,6 +10,7 @@ class Handler:
         """
         method = getattr(self, prefix+name, None)
         if callable(method): return method(*args)
+        /**/
     def start(self, name):
         """
         start和end方法只是使用各自的前缀的start_和end_方法的助手方法
